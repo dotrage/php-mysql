@@ -51,11 +51,19 @@ $user_total = $db->count("SELECT * FROM users");
 
 Insert a new record into a table:
 ``` php
-$insert = $db->query("INSERT INTO users (name,city,state,zip) VALUES ('%s','%s','%s','%s')","John Doe","Denver","CO","80238");
+$insert = $db->query(
+	"INSERT INTO users (name,city,state,zip)" .
+	"VALUES ('%s','%s','%s','%s')",
+	"John Doe","Denver","CO","80238"
+);
 ```
 
 Update an existing record:
 ``` php
-$update = $db->query("UPDATE users SET name = '%s' WHERE key = '%s'","Johnny Doe","John Doe");
+$update = $db->query(
+	"UPDATE users SET name = '%s' " .
+	" WHERE key = '%s'",
+	"Johnny Doe","John Doe"
+);
 ```
 
